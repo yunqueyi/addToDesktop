@@ -1,0 +1,27 @@
+/* for dpr >= 2 */
+@media screen and (-webkit-min-device-pixel-ratio: 2){
+	.u-txt:after, .u-type:after{
+		width:200%; height:200%;
+		-webkit-transform:scale(0.5); -ms-transform:scale(0.5); transform:scale(0.5);
+		-webkit-transform-origin:top left; -ms-transform-origin:top left; transform-origin:top left;
+	}
+	.u-txt, .u-txt:after{border-radius:8px;}
+}
+/* for dpr >= 3 */
+@media screen and (-webkit-min-device-pixel-ratio:3){
+	.u-txt:after, .f-bd:after, .u-type:after{
+		width:300%; height:300%;
+		-webkit-transform:scale(0.333333); -ms-transform:scale(0.333333); transform:scale(0.333333);
+	}
+	.u-txt, .u-txt:after{border-radius:12px;}
+}
+
+/* Normal */
+.m-guide, .m-guide-4{position:absolute; left:0; bottom:0; width:100%; height:auto;}
+.m-guide-4{display:none;}
+
+/* height <= 440 display the small one */
+@media screen and (max-height:440px) {
+	.m-guide{display:none;}
+	.m-guide-4{display:block;}
+}

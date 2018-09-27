@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+        <meta name="apple-mobile-web-app-title" content="二维码名片">
+        <title>云鹊医</title>
+        <link rel="apple-touch-icon"
+                href="./apple-touch-icon.png">
+        <link rel="stylesheet" type="text/css"
+                href="./addtoscreen.css">
+</head>
+
+<body>
+        <img class="m-guide" src="./mainimage.png">
+        <img class="m-guide-4" src="./mainimage_4.png">
+        <script src="./ios_add_to_screen.js">
+        </script>
+        <script type="text/javascript">
+                window.onload = function () {
+                        alert("打开url之前")
+                        var fun = openApp("picado://health/doctorQRCode"); //对应功能url
+                        alert("打开url之后")
+                };
+        </script>
+</body>
+
+</html>
