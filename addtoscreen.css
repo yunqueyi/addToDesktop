@@ -25,3 +25,21 @@
 	.m-guide{display:none;}
 	.m-guide-4{display:block;}
 }
+
+#schemeLink {
+	
+	text-decoration: none;
+	background-color: #449284;
+	width: 240px;
+	height: 40px;
+	line-height: 40px;
+	font-size: medium;
+	color: white;
+	margin: 0 auto;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -20px;
+	margin-left: -120px;
+}
+	

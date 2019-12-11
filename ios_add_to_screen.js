@@ -1,4 +1,11 @@
-function openApp(url) {
+function getIOSversion() { 
+  if (/iP(hone|od|ad)/.test(navigator.platform)) { 
+      var e = navigator.appVersion.match(/OS (\d+)_(\d+)_?(\d+)?/); 
+      return [parseInt(e[1], 10), parseInt(e[2], 10), parseInt(e[3] || 0, 10)] 
+  } 
+} 
+
+function openApp() {
   var Base64 = function () {
     var _keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
     var _utf8_encode = function (string) {
@@ -45,9 +52,27 @@ function openApp(url) {
     };
   };
 
+  var schemeLink = document.getElementById("schemeLink");
+  var imgs = document.getElementsByTagName('img');
+
   if (window.navigator.standalone) {
-    window.location.href = url;
+    schemeLink.style.display = 'block';
+    schemeLink.click();
+    for (var i = 0; i < imgs.length; i++) {
+        imgs[i].style.display = 'none';
+    }
+
   } else {
+    schemeLink.style.display = 'none';
+    for (var i = 0; i < imgs.length; i++) {
+        imgs[i].style.display = 'block';
+    }
+
+    var ver = getIOSversion()
+    if (ver[0] >= 13) {
+      return;
+    }
+
     //将资源引用相对路径替换为绝对路径
     var links = document.getElementsByTagName('link');
     for(var i=0;i<links.length;i++){
